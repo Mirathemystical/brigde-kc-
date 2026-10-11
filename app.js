@@ -128,25 +128,23 @@ if (supportForm) {
   const name = document.querySelector("#support-name").value.trim() || "Not provided";
   const contact = document.querySelector("#support-contact").value.trim() || "Not provided";
   const message = document.querySelector("#support-message").value.trim();
-  const title = "[Community offer] " + offer;
+  const subject = "[BRIDGE KC community offer] " + offer;
   const body = [
-   "## Community support offer",
+   "Community support offer",
    "",
-   "**Offer type:** " + offer,
-   "**Name / organization:** " + name,
-   "**Public contact supplied by contributor:** " + contact,
+   "Offer type: " + offer,
+   "Name / organization: " + name,
+   "Contributor contact: " + contact,
    "",
-   "## Details",
+   "Details:",
    message,
    "",
-   "---",
-   "Submitted through the BRIDGE KC community form. Please verify all information before adding it to the public directory. Do not publish private or sensitive personal information."
+   "Submitted through the BRIDGE KC website. Please verify details before adding information to the public directory."
   ].join("\n");
-  const issueUrl = "https://github.com/Mirathemystical/brigde-kc-/issues/new?title=" +
-   encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
+  const mailto = "mailto:bridgekc186@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   document.querySelector("#support-message-status").textContent =
-   "Your draft is ready. GitHub will open so you can review and submit it to the project. Nothing is sent until you submit it there; GitHub may require sign-in. Please do not include confidential information.";
-  window.open(issueUrl, "_blank", "noopener,noreferrer");
+   "Your email draft is ready. Review it in your email app and press Send. Nothing is sent automatically; please do not include confidential information.";
+  window.location.href = mailto;
  });
 }
 
