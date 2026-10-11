@@ -151,3 +151,34 @@ if (supportForm) {
   window.open(issueUrl, "_blank", "noopener,noreferrer");
  });
 }
+
+
+const careerQuiz = document.querySelector("#career-quiz");
+if (careerQuiz) {
+ careerQuiz.addEventListener("submit", event => {
+  event.preventDefault();
+  const interest = document.querySelector("#quiz-interest").value;
+  const style = document.querySelector("#quiz-style").value;
+  const time = document.querySelector("#quiz-time").value;
+  const barrier = document.querySelector("#quiz-barrier").value;
+  const location = document.querySelector("#quiz-location").value;
+  const map = {
+   tech:{title:"Technology & IT",description:"Start with i.c.stars Kansas City, MCC certificate options, and entry-level IT support or technology projects.",links:[["i.c.stars Kansas City","https://www.icstars.org/location/kansas-city/"],["MCC certificates","https://mcckc.edu/programs/certificates/"]]},
+   health:{title:"Healthcare & patient support",description:"Compare short healthcare credentials such as CNA, phlebotomy, medical assistant, and patient care roles. Confirm clinical requirements and exam costs.",links:[["MCC certificates","https://mcckc.edu/programs/certificates/"],["Great Jobs KC","https://greatjobskc.org/skills-training/"]]},
+   trades:{title:"Skilled trades & building systems",description:"Explore electrical, HVAC, construction, welding, and maintenance training. Apprenticeships may let you earn while learning.",links:[["Missouri apprenticeships","https://jobs.mo.gov/moapprenticeships"],["KCKCC workforce programs","https://www.kckcc.edu/academics/workforce-innovation/workforce-development-programs.html"]]},
+   logistics:{title:"Logistics, transportation & operations",description:"Explore warehouse, CDL, inventory, and supply-chain routes. Check licensing, physical requirements, costs, and local job postings.",links:[["Workforce Partnership","https://workforcepartnership.com/job-seeker-services/"],["Great Jobs KC","https://greatjobskc.org/skills-training/"]]},
+   office:{title:"Business & office support",description:"Explore customer service, administrative support, bookkeeping, and office software certificates. Build a practical work sample and resume alongside training.",links:[["MCC certificates","https://mcckc.edu/programs/certificates/"],["Workforce Partnership","https://workforcepartnership.com/job-seeker-services/"]]},
+   manufacturing:{title:"Manufacturing, maintenance & quality",description:"Explore machine operation, industrial maintenance, production, and quality roles, including apprenticeship options.",links:[["KCKCC workforce programs","https://www.kckcc.edu/academics/workforce-innovation/workforce-development-programs.html"],["Missouri apprenticeships","https://jobs.mo.gov/moapprenticeships"]]},
+   people:{title:"Community support & people-facing work",description:"Explore entry routes in community services, childcare, education support, and healthcare support. Requirements vary by role.",links:[["Great Jobs KC","https://greatjobskc.org/skills-training/"],["Kansas adult career pathways","https://kansasregents.gov/workforce_development/adult-education/accelerating-opportunity-kansas"]]}
+  };
+  const chosen=map[interest];
+  const timeNote=time==="fast"?"Prioritize short certificates, employer training, and entry-level roles with paid onboarding.":time==="mid"?"Compare 3–9 month certificates, funding options, and employer-linked programs.":"Consider longer credentials only when job outcomes and funding justify the time.";
+  const styleNote=style==="hands"?"Look for hands-on labs, clinical practice, apprenticeships, or on-the-job learning.":style==="class"?"Prioritize short certificate programs with a clear exam and credential.":style==="project"?"Look for project-based learning, portfolios, and practical demonstrations.":"Ask about coaching, mentoring, and small-group support.";
+  const barrierNote=barrier==="free"?"Contact a workforce center before enrolling to ask about WIOA, SNAP-linked SkillUP, and other current funding.":barrier==="paid"?"Prioritize registered apprenticeships and employers that pay for training.":barrier==="stable"?"Compare local employer demand, benefits, shift schedules, and retention—not just course completion.":barrier==="growth"?"Compare wage progression and the next stackable credential in each pathway.":"Ask providers about evening classes, online components, hybrid schedules, and required in-person hours.";
+  const area=location==="mo"?"Focus first on Missouri providers and the Missouri ETPL.":location==="ks"?"Focus first on Kansas providers and KansasWorks.":"Compare both states; funding rules usually depend on your residence and the workforce board.";
+  const links=chosen.links.map(link=>'<li><a href="'+link[1]+'" target="_blank" rel="noopener noreferrer">'+link[0]+' ↗</a></li>').join("");
+  const result=document.querySelector("#quiz-results");
+  result.innerHTML='<span class="pathway-label">Your suggested match</span><h3>'+chosen.title+'</h3><p>'+chosen.description+'</p><ul>'+links+'</ul><h4>Your next-step guidance</h4><ul><li>'+timeNote+'</li><li>'+styleNote+'</li><li>'+barrierNote+'</li><li>'+area+'</li></ul><p><b>Next action:</b> contact a provider or workforce center, ask about total cost and funding, and confirm the credential is recognized by employers before committing.</p>';
+  result.scrollIntoView({behavior:"smooth",block:"nearest"});
+ });
+}
