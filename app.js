@@ -106,3 +106,33 @@ document.querySelector("#feedback-form").addEventListener("submit",e=>{
 });
 renderResources();
 try{if(localStorage.getItem("bridge-kc-saved-plan")){document.querySelector("#saved-message").textContent="A plan is saved in this browser.";document.querySelector("#save-plan").textContent="✓ Saved on this device";}}catch(e){}
+
+const supportForm = document.querySelector("#support-form");
+if (supportForm) {
+ supportForm.addEventListener("submit", event => {
+  event.preventDefault();
+  const offer = document.querySelector("#support-type").value;
+  const name = document.querySelector("#support-name").value.trim() || "Not provided";
+  const contact = document.querySelector("#support-contact").value.trim() || "Not provided";
+  const message = document.querySelector("#support-message").value.trim();
+  const title = "[Community offer] " + offer;
+  const body = [
+   "## Community support offer",
+   "",
+   "**Offer type:** " + offer,
+   "**Name / organization:** " + name,
+   "**Public contact supplied by contributor:** " + contact,
+   "",
+   "## Details",
+   message,
+   "",
+   "---",
+   "Submitted through the BRIDGE KC community form. Please verify all information before adding it to the public directory. Do not publish private or sensitive personal information."
+  ].join("\n");
+  const issueUrl = "https://github.com/Mirathemystical/brigde-kc-/issues/new?title=" +
+   encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
+  document.querySelector("#support-message-status").textContent =
+   "Your draft is ready. GitHub will open so you can review and submit it to the project. Nothing is sent until you submit it there; GitHub may require sign-in. Please do not include confidential information.";
+  window.open(issueUrl, "_blank", "noopener,noreferrer");
+ });
+}
