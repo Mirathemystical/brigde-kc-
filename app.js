@@ -117,7 +117,7 @@ if (typeof document !== "undefined" && document.body.dataset.categoryPage) {
  search.addEventListener("input",renderCategoryResources);
  document.querySelector("#clear-filters").addEventListener("click",()=>{search.value="";renderCategoryResources();search.focus();});
  renderCategoryResources();
-} else if (document.querySelector("#resource-grid")) {
+} else if (document.querySelector("#goal")) {
 
 let activeCategory = "All";
 const grid = document.querySelector("#resource-grid");
