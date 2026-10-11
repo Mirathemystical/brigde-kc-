@@ -86,6 +86,27 @@ const plans = {
  training:{title:"A training exploration plan",steps:[["Name your goal","Write down the role or skill you want training to help you reach."],["Compare two programs","Check total cost, time, prerequisites, format, and whether employers recognize it."],["Ask about funding first","Contact FEC or Workforce Partnership based on your area and ask whether you may qualify for training support before enrolling."]]},
  support:{title:"A community-support plan",steps:[["Decide what kind of help you need","You do not need to share sensitive personal details on this page."],["Start with 211","Ask United Way 211 about local food, housing, utility, health, childcare, or transportation resources."],["Confirm the next step","Check current eligibility, availability, costs, and what to bring directly with the provider."]]}
 };
+
+if (typeof document !== "undefined" && document.body.dataset.categoryPage) {
+ const categoryName = document.body.dataset.categoryPage;
+ const grid = document.querySelector("#resource-grid");
+ const search = document.querySelector("#search");
+ const count = document.querySelector("#result-count");
+ const renderCategoryResources = () => {
+  const query = search.value.trim().toLowerCase();
+  const filtered = resources.filter(resource => resource.category === categoryName && (resource.title+" "+resource.description+" "+resource.tag+" "+resource.region+" "+resource.contact).toLowerCase().includes(query));
+  count.textContent = filtered.length+" resource"+(filtered.length===1?"":"s");
+  if (!filtered.length) {
+   grid.innerHTML = '<div class="empty-state"><b>No matches just yet.</b><p>Try another search phrase.</p></div>';
+   return;
+  }
+  grid.innerHTML = filtered.map(resource => '<article class="resource-card"><div class="resource-top"><span class="resource-icon" aria-hidden="true">'+resource.icon+'</span><span class="resource-category">'+resource.category+'</span></div><h3>'+resource.title+'</h3><p>'+resource.description+'</p><p><b>Area:</b> '+resource.region+'</p><p><b>Contact:</b> '+resource.contact+'</p><div class="resource-footer"><span>'+resource.tag+'</span><a href="'+resource.url+'" target="_blank" rel="noopener noreferrer">Official site ↗</a></div></article>').join("");
+ };
+ search.addEventListener("input",renderCategoryResources);
+ document.querySelector("#clear-filters").addEventListener("click",()=>{search.value="";renderCategoryResources();search.focus();});
+ renderCategoryResources();
+} else {
+
 let activeCategory = "All";
 const grid = document.querySelector("#resource-grid");
 const search = document.querySelector("#search");
@@ -194,4 +215,5 @@ if (careerQuiz) {
   result.innerHTML = '<span class="pathway-label">Your personalized starting point · ' + regionLabel + '</span><h3>' + chosen.title + '</h3><p>' + chosen.description + '</p><h4>Resources matched to your answers</h4><ul>' + links + '</ul><h4>Your learning and timeline fit</h4><ul><li>' + timeNote + '</li><li>' + styleNote + '</li><li>' + barrierNote + '</li><li>' + area + '</li></ul><h4>Your first 7 days</h4><ol><li><b>Day 1:</b> Open one training provider and write down the next start date, entry requirements, and contact method.</li><li><b>Days 2–3:</b> Ask whether this exact program is funded, what costs are not covered, and whether transportation, equipment, childcare, or internet support is available.</li><li><b>Days 4–5:</b> Find three local job postings for the target role. Compare their required skills and credentials with the course curriculum.</li><li><b>Days 6–7:</b> Choose one next action: attend an information session, request a workforce appointment, or apply if requirements and funding are clear.</li></ol><p class="verification-note"><b>Important:</b> These are starting points, not a guarantee of admission, funding, certification, or employment. Program availability, costs, eligibility, and start dates must be confirmed directly. Do not pay for a course until you understand total costs and funding approval.</p>';
   result.scrollIntoView({behavior:"smooth",block:"nearest"});
  });
+}
 }
