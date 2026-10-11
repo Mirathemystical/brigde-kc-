@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find career, training, and digital-skills resources in Kansas City and choose a practical next step.">
+  <title>BRIDGE KC — Your next step starts here</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="BRIDGE KC home"><span class="brand-mark">B</span><span>BRIDGE <b>KC</b></span></a>
+    <nav aria-label="Main navigation"><a href="#resources">Explore resources</a><a href="#roadmap">My next step</a><a href="#about">About</a></nav>
+    <a class="header-cta" href="#resources">Find support <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> A clearer path forward</p>
+        <h1>Your next chapter<br>starts <em>with a step.</em></h1>
+        <p class="hero-text">Explore career, training, and digital-skills resources around Kansas City. Find options that fit your goals, then turn possibility into a plan.</p>
+        <div class="hero-actions"><a class="button primary" href="#resources">Explore resources <span>→</span></a><a class="text-link" href="#roadmap">Build my next-step plan <span>↗</span></a></div>
+        <div class="hero-note"><span class="avatar-stack"><i>✳</i><i>↗</i><i>◎</i></span><span>Built around people, not paperwork.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a winding path toward a sunrise" role="img">
+        <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="path"></div>
+        <div class="floating-card card-top"><span class="mini-icon">✦</span><span><b>Small steps count</b><small>Progress, at your pace</small></span></div>
+        <div class="floating-card card-bottom"><span class="check-circle">✓</span><span><b>One next step</b><small>Make your goal actionable</small></span></div>
+        <span class="art-caption">YOUR PATH. YOUR PACE.</span>
+      </div>
+    </section>
+    <section class="stats-strip" aria-label="Project principles"><div><b>01</b><span>Start with your goal</span></div><div><b>02</b><span>Explore real options</span></div><div><b>03</b><span>Take the next step</span></div><div><b>04</b><span>Keep moving forward</span></div></section>
+    <section class="section resources-section" id="resources">
+      <div class="section-heading"><div><p class="eyebrow">THE RESOURCE BOARD</p><h2>Find what moves you forward.</h2><p class="section-intro">Start broad or search for something specific. These examples are placeholders until verified with local providers.</p></div><span class="result-count" id="result-count">6 examples</span></div>
+      <div class="search-row"><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search resources</span><input id="search" type="search" placeholder="Try “resume”, “computer skills”, or “training”"></label><button class="filter-button" id="clear-filters" type="button">Reset filters ↺</button></div>
+      <div class="filter-list" role="group" aria-label="Filter resources">
+        <button class="filter active" data-category="All" type="button">All resources</button><button class="filter" data-category="Career" type="button">Career & jobs</button><button class="filter" data-category="Training" type="button">Training</button><button class="filter" data-category="Digital skills" type="button">Digital skills</button><button class="filter" data-category="Community" type="button">Community support</button>
+      </div>
+      <div class="resource-grid" id="resource-grid" aria-live="polite"></div>
+      <p class="verification-note"><span>ⓘ</span> <span><b>Before you go:</b> Resource listings are demo examples, not verified referrals. Confirm current availability, eligibility, costs, and details directly with each provider.</span></p>
+    </section>
+    <section class="roadmap-section" id="roadmap">
+      <div class="roadmap-copy"><p class="eyebrow">YOUR NEXT-STEP BUILDER</p><h2>Big goals get easier<br>one step at a time.</h2><p>Choose what you’re working toward. We’ll suggest a simple starting point you can adapt to your situation.</p>
+        <label for="goal" class="field-label">What would you like to focus on?</label>
+        <select id="goal"><option value="job">Find a job or change careers</option><option value="skills">Build digital skills</option><option value="training">Find training or certification</option><option value="support">Connect with community support</option></select>
+        <button class="button primary" id="make-plan" type="button">Build my plan <span>→</span></button>
+      </div>
+      <div class="plan-card"><div class="plan-card-head"><span class="plan-icon">✳</span><span><small>YOUR STARTING POINT</small><b id="plan-title">A simple job-search plan</b></span><span class="plan-tag">3 steps</span></div><ol id="plan-steps"><li><span>1</span><div><b>Get clear on your target</b><p>Write down the kind of role, schedule, or workplace you want.</p></div></li><li><span>2</span><div><b>Prepare one useful document</b><p>Gather your experience and update a resume or work history.</p></div></li><li><span>3</span><div><b>Reach out to one resource</b><p>Choose a relevant career-support organization and ask about its services.</p></div></li></ol><button class="save-plan" id="save-plan" type="button">□ Save steps on this device</button><p class="saved-message" id="saved-message" role="status"></p></div>
+    </section>
+    <section class="about-section" id="about"><div class="about-symbol">B<span>+</span></div><div><p class="eyebrow">WHY BRIDGE KC</p><h2>Opportunity should feel closer.</h2><p>BRIDGE KC is an early-stage community project exploring how clearer information and practical next steps can make career and digital-skills support easier to navigate.</p></div><div class="principles"><span>Human-first</span><span>Privacy-minded</span><span>Community-led</span></div></section>
+    <section class="feedback-section"><div><p class="eyebrow">HELP US BUILD BETTER</p><h2>What would help you most?</h2><p>Choose the improvement that would make a resource navigator more useful.</p></div><form id="feedback-form"><label for="feedback">The most useful improvement would be…</label><select id="feedback" required><option value="">Choose one</option><option>More verified local resources</option><option>Clearer eligibility and cost details</option><option>Help writing a resume or application</option><option>More language and accessibility options</option><option>Guidance on what to do next</option></select><button class="button dark" type="submit">Share feedback <span>→</span></button><p class="saved-message" id="feedback-message" role="status">Demo only: feedback stays in this page and is not sent to a server.</p></form></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">B</span><span>BRIDGE <b>KC</b></span></a><p>Community-powered. Step by step.</p><span>Prototype · Resource details require verification</span></footer>
+</body>
+</html>
