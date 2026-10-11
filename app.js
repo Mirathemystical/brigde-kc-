@@ -1,3 +1,10 @@
+if (typeof document === 'undefined') {
+  console.warn('BRIDGE KC must run in a browser. Start it with: npm start');
+  if (typeof process !== 'undefined') {
+    process.exit(0);
+  }
+}
+
 const resources = [
  {id:1,title:"Full Employment Council (FEC)",category:"Career",icon:"↗",description:"Kansas City, Missouri-area workforce services, including career guidance, job-search help, and training options for eligible participants.",tag:"Missouri workforce services",region:"Missouri-side counties; confirm service area and eligibility.",contact:"816-471-2330",url:"https://www.feckc.org/"},
  {id:2,title:"Workforce Partnership — Job Seeker Services",category:"Career",icon:"◎",description:"Job-search support for the Kansas-side workforce area, including resume help, interview preparation, and career services. Training funds may be available to eligible people.",tag:"Kansas workforce services",region:"Johnson, Leavenworth, and Wyandotte counties, Kansas.",contact:"Use the official website to find current contact options.",url:"https://workforcepartnership.com/job-seeker-services/"},

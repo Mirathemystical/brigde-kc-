@@ -23,7 +23,11 @@ BRIDGE KC is an early-stage prototype designed to help people identify local car
 
 ## Run locally
 
-Open `index.html` in a modern browser. No build tools or package installation are required.
+1. In the project folder, run `npm start`.
+2. Open `http://localhost:8000` in a modern browser.
+3. If you want to keep the page open for development, leave the terminal running.
+
+This project is a static browser app, so it should not be launched with `node app.js` directly.
 
 ## Suggested next steps
 
