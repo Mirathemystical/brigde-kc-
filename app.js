@@ -117,7 +117,7 @@ if (typeof document !== "undefined" && document.body.dataset.categoryPage) {
  search.addEventListener("input",renderCategoryResources);
  document.querySelector("#clear-filters").addEventListener("click",()=>{search.value="";renderCategoryResources();search.focus();});
  renderCategoryResources();
-} else {
+} else if (document.querySelector("#resource-grid")) {
 
 let activeCategory = "All";
 const grid = document.querySelector("#resource-grid");
@@ -166,6 +166,8 @@ document.querySelector("#feedback-form").addEventListener("submit",e=>{
 });
 renderResources();
 try{if(localStorage.getItem("bridge-kc-saved-plan")){document.querySelector("#saved-message").textContent="A plan is saved in this browser.";document.querySelector("#save-plan").textContent="✓ Saved on this device";}}catch(e){}
+
+}
 
 const supportForm = document.querySelector("#support-form");
 if (supportForm) {
@@ -227,5 +229,4 @@ if (careerQuiz) {
   result.innerHTML = '<span class="pathway-label">Your personalized starting point · ' + regionLabel + '</span><h3>' + chosen.title + '</h3><p>' + chosen.description + '</p><h4>Resources matched to your answers</h4><ul>' + links + '</ul><h4>Your learning and timeline fit</h4><ul><li>' + timeNote + '</li><li>' + styleNote + '</li><li>' + barrierNote + '</li><li>' + area + '</li></ul><h4>Your first 7 days</h4><ol><li><b>Day 1:</b> Open one training provider and write down the next start date, entry requirements, and contact method.</li><li><b>Days 2–3:</b> Ask whether this exact program is funded, what costs are not covered, and whether transportation, equipment, childcare, or internet support is available.</li><li><b>Days 4–5:</b> Find three local job postings for the target role. Compare their required skills and credentials with the course curriculum.</li><li><b>Days 6–7:</b> Choose one next action: attend an information session, request a workforce appointment, or apply if requirements and funding are clear.</li></ol><p class="verification-note"><b>Important:</b> These are starting points, not a guarantee of admission, funding, certification, or employment. Program availability, costs, eligibility, and start dates must be confirmed directly. Do not pay for a course until you understand total costs and funding approval.</p>';
   result.scrollIntoView({behavior:"smooth",block:"nearest"});
  });
-}
 }
