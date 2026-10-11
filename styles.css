@@ -8,3 +8,78 @@
 .training-pathways{padding-top:44px}.pathway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.pathway-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}.pathway-card h3{font-family:Manrope,sans-serif;font-size:20px;line-height:1.25;margin:10px 0}.pathway-card p{color:var(--muted);font-size:14px}.pathway-card a{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:3px}.pathway-label{display:inline-block;background:var(--mint);color:var(--green);padding:4px 9px;border-radius:999px;font-size:11px;font-weight:800}.training-checklist{margin-top:22px;background:#edf3ec;border-radius:18px;padding:24px}.training-checklist h3{margin-top:0}.training-checklist li{margin:7px 0}.training-checklist p{font-size:13px;color:var(--muted)}@media(max-width:850px){.pathway-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.pathway-grid{grid-template-columns:1fr}}
 /* Career quiz and i.c.stars sections */
 .career-quiz-section{padding-top:48px}.quiz-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;max-width:900px}.quiz-form label{font-weight:700;align-self:end}.quiz-form select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit}.quiz-form button{grid-column:1/-1;justify-self:start}.quiz-results{margin:18px 0 28px;padding:22px;background:#edf3ec;border-radius:16px}.quiz-results h3{margin-top:8px}.quiz-results li{margin:7px 0}.quiz-results a{color:var(--green);font-weight:700}.pathway-options{margin-top:24px}.icstars-feature{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;padding:40px;background:#142d27;color:#fff;border-radius:24px;margin-top:40px}.icstars-feature .eyebrow{color:#a8d6bf}.icstars-feature h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:8px 0 16px}.icstars-feature p,.icstars-feature li{color:#e2ece6}.icstars-note{background:#24443b;border-radius:18px;padding:24px;align-self:center}.icstars-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:22px}.icstars-actions>a:not(.button){color:#c8ead8;text-decoration:underline}.icstars-feature .button{background:#fff;color:#142d27}@media(max-width:700px){.quiz-form,.icstars-feature{grid-template-columns:1fr}.icstars-feature{padding:24px}.quiz-form button{grid-column:auto}}
+
+body{background:radial-gradient(circle at top left,#fffdf7 0%,#f5f7ef 32%,#eef4ef 100%)}
+
+.site-header{background:rgba(248,247,241,.9);box-shadow:0 8px 28px rgba(23,58,48,.05)}
+.site-header nav a{transition:color .2s ease, transform .2s ease}
+.site-header nav a:hover{transform:translateY(-1px)}
+.header-cta,.button,.filter-button,.save-plan,.filter,.resource-footer a,.plan-card button,.header-cta{transition:all .2s ease}
+
+.button,.filter-button,.save-plan,.filter{border-radius:999px;border:1px solid transparent;font-weight:700;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease}
+.button:hover,.filter-button:hover,.save-plan:hover,.filter:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(36,107,87,.12)}
+.button.primary,.button.dark{background:linear-gradient(135deg,#2a765e,#1d4e41);color:#fff;padding:14px 22px;border:0}
+.button.dark{background:linear-gradient(135deg,#183f35,#214b42)}
+.button.primary:hover,.button.dark:hover{box-shadow:0 16px 28px rgba(27,74,61,.26)}
+
+.hero-copy,.roadmap-copy,.about-section,.feedback-section>.div,.pathway-card,.resource-card,.plan-card,.quiz-form,.training-checklist,.quiz-results{position:relative}
+.hero-copy{padding-right:18px}
+.hero-art{background:linear-gradient(180deg,#eff9f2 0%,#e1f1e6 100%);border:1px solid rgba(36,107,87,.08);box-shadow:0 30px 70px rgba(34,82,68,.12);border-radius:32px;overflow:hidden}
+
+.resource-card,.pathway-card,.plan-card,.quiz-form,.training-checklist,.quiz-results{background:rgba(255,255,255,.92);border:1px solid rgba(22,51,45,.08);box-shadow:0 18px 36px rgba(17,34,30,.05);backdrop-filter:blur(4px)}
+.resource-card{border-radius:20px;padding:18px;transition:transform .2s ease, box-shadow .2s ease;border:1px solid rgba(145,170,162,.18)}
+.resource-card:hover{transform:translateY(-2px);box-shadow:0 22px 38px rgba(17,34,30,.08)}
+.resource-card h3{margin:12px 0 10px;font-size:1.1rem}
+.resource-category,.resource-top .resource-icon,.resource-footer span{background:#edf7f1;color:var(--green)}
+.resource-top{display:flex;justify-content:space-between;align-items:center}
+.resource-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;font-size:1.25rem}
+.resource-category{padding:5px 9px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.resource-footer{margin-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;border-top:1px solid rgba(36,107,87,.08)}
+.resource-footer a{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:700}
+
+.filter-list{gap:10px;margin:18px 0 24px}
+.filter{padding:10px 14px;background:#f4f7f3;border:1px solid rgba(36,107,87,.1);color:var(--ink);font-size:12px}
+.filter.active{background:linear-gradient(135deg,#e9f5ee,#d3ece1);border-color:rgba(36,107,87,.2);color:var(--green)}
+
+.filter-button,.save-plan{padding:10px 15px;background:#ffffff;border:1px solid rgba(36,107,87,.14);color:var(--ink)}
+.save-plan{margin-top:20px;background:#f3f8f4}
+
+.pathway-card{border-radius:22px;transition:transform .2s ease, box-shadow .2s ease}
+.pathway-card:hover{transform:translateY(-3px);box-shadow:0 20px 36px rgba(17,34,30,.07)}
+.pathway-label{background:linear-gradient(135deg,#e7f5ed,#d4efe0);border:1px solid rgba(36,107,87,.12)}
+
+.stats-strip{background:linear-gradient(180deg,#f4f8f3,#edf5f0);border:1px solid rgba(36,107,87,.08);border-radius:22px;box-shadow:0 12px 28px rgba(33,67,55,.04)}
+.stats-strip div{padding:12px 10px}
+
+.roadmap-section{background:linear-gradient(180deg,#f8fbf7 0%,#edf6f0 100%);border-radius:30px;padding:44px 30px;border:1px solid rgba(36,107,87,.07)}
+.plan-card{border-radius:24px;padding:24px;background:#fff}
+.plan-card-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.plan-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#e4f3e7,#d7efe0);color:var(--green);font-size:22px}
+.plan-tag{margin-left:auto;background:#f3f8f4;color:var(--green);padding:6px 10px;border-radius:999px;font-size:11px;font-weight:800}
+#plan-steps li{display:flex;align-items:flex-start;gap:14px;padding:10px 0;border-bottom:1px solid rgba(23,43,40,.07)}
+#plan-steps li:last-child{border-bottom:0}
+#plan-steps li span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#dfeee7,#cae3d6);color:var(--green);font-weight:800}
+
+.about-section,.feedback-section{background:rgba(255,255,255,.6);border:1px solid rgba(36,107,87,.08);border-radius:24px;box-shadow:0 12px 26px rgba(17,34,30,.03)}
+.about-symbol{background:linear-gradient(135deg,#1f4d40,#2d755f);box-shadow:0 18px 36px rgba(29,78,65,.2)}
+.principles span{background:#edf7f1;border:1px solid rgba(36,107,87,.08);color:var(--green)}
+
+#support-form input,#support-form textarea,#support-form select,
+.quiz-form select,.search-box,input{border-radius:14px;border:1px solid rgba(35,57,53,.12);background:#fff;box-shadow:inset 0 1px 2px rgba(0,0,0,.01)}
+#support-form input:focus,#support-form textarea:focus,#support-form select:focus,
+.quiz-form select:focus,.search-box input:focus{outline:none;border-color:rgba(36,107,87,.4);box-shadow:0 0 0 4px rgba(36,107,87,.08)}
+
+.search-box{background:#fff;border:1px solid rgba(35,57,53,.12);padding:0 14px;border-radius:16px;box-shadow:0 10px 20px rgba(17,34,30,.02)}
+.search-box input{border:0;box-shadow:none;background:transparent}
+
+main{padding-bottom:36px}
+
+footer{border-top:1px solid rgba(23,43,40,.08);background:rgba(255,255,255,.45)}
+
+@media(max-width:760px){
+  .site-header nav{display:none}
+  .hero{padding-top:42px}
+  .hero-copy{padding-right:0}
+  .resource-grid{grid-template-columns:1fr}
+  .pathway-grid{grid-template-columns:1fr}
+}
