@@ -7,6 +7,7 @@ if (typeof document === 'undefined') {
 
 const navToggle = document.querySelector('.nav-toggle');
 const siteHeader = document.querySelector('.site-header');
+const quickNavSelect = document.querySelector('.quick-nav-select-menu');
 
 if (navToggle && siteHeader) {
   navToggle.addEventListener('click', () => {
@@ -25,6 +26,14 @@ if (navToggle && siteHeader) {
     if (window.innerWidth > 760) {
       siteHeader.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+if (quickNavSelect) {
+  quickNavSelect.addEventListener('change', () => {
+    if (quickNavSelect.value) {
+      window.location.href = quickNavSelect.value;
     }
   });
 }
