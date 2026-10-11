@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BRIDGE KC connects Kansas City residents with practical pathways and community resources.">
+  <title>Offer help | BRIDGE KC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="BRIDGE KC home"><span class="brand-mark">B</span><span>BRIDGE <b>KC</b></span></a>
+    <nav aria-label="Main navigation"><a href="index.html#resources">Explore training</a><a href="index.html#career-quiz-section">Find my pathway</a><a href="index.html#training-pathways">Certificates & training</a><a href="index.html#roadmap">My next step</a><a href="about.html">About</a><a href="offer-help.html">Offer help</a></nav>
+    <a class="header-cta" href="index.html#resources">Find support <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main-content">
+  <div class="section page-intro"><p class="eyebrow">BRIDGE KC · KANSAS CITY</p><h1>Help build the bridge.</h1><p class="section-intro">SUBOffer help</p></div>
+      <section class="feedback-section" id="community">
+      <div><p class="eyebrow">COMMUNITY MAKES THE BRIDGE</p><h2>Have something to offer?</h2><p>Organizations, employers, mentors, volunteers, and neighbors can help make local support easier to find. Share a resource, offer volunteer time, donate supplies, or propose a partnership.</p><p class="contact-email">Email BRIDGE KC: <a href="mailto:bridgekc186@gmail.com">bridgekc186@gmail.com</a></p>
+        <div class="principles"><span>Share a resource</span><span>Volunteer skills</span><span>Offer opportunities</span></div>
+      </div>
+      <form id="support-form">
+        <label for="support-type">How would you like to help?</label>
+        <select id="support-type" required><option value="">Choose an offer</option><option>Recommend a community resource</option><option>Offer volunteering or mentoring</option><option>Share jobs, internships, or training</option><option>Donate supplies or equipment</option><option>Explore an organizational partnership</option><option>Help translate or improve accessibility</option><option>Other community support</option></select>
+        <label for="support-name">Your name or organization (optional)</label><input id="support-name" type="text" maxlength="100" placeholder="Name or organization">
+        <label for="support-contact">A safe way to contact you (optional)</label><input id="support-contact" type="text" maxlength="160" placeholder="Email or public contact link">
+        <label for="support-message">Tell us what you can offer</label><textarea id="support-message" rows="4" maxlength="1200" required placeholder="Share the resource, offer, service area, or idea. Please do not include private information about anyone seeking help."></textarea>
+        <button class="button dark" type="submit">Prepare support offer ↗</button>
+        <p class="saved-message" id="support-message-status" role="status">This prototype does not collect submissions. Submitting opens a prefilled public GitHub issue for the project team; do not include confidential information.</p>
+      </form>
+    </section>
+  </main>
+  <footer><a class="brand" href="index.html"><span class="brand-mark">B</span><span>BRIDGE <b>KC</b></span></a><p>Community-powered. Step by step.</p><a href="mailto:bridgekc186@gmail.com">bridgekc186@gmail.com</a><span>Prototype · Resource details require verification</span></footer>
+</body>
+</html>
