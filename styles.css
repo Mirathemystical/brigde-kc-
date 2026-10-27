@@ -215,3 +215,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
  html{scroll-behavior:auto}
  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
+
+/* Community support subcategory filters */
+.community-subcategories{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 18px}
+.community-filter{border:1px solid #cbd8cf;background:#fff;color:var(--ink);border-radius:999px;padding:9px 15px;min-height:40px;font:600 12px 'DM Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.community-filter:hover,.community-filter.is-active{background:var(--green);color:#fff;border-color:var(--green)}
+.community-filter:focus-visible{outline:3px solid #b87936;outline-offset:3px}
