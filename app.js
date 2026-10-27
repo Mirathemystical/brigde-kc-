@@ -132,7 +132,8 @@ if (typeof document !== "undefined" && document.body.dataset.categoryPage) {
  const count = document.querySelector("#result-count");
  const renderCategoryResources = () => {
   const query = search.value.trim().toLowerCase();
-  const filtered = resources.filter(resource => resource.category === categoryName && (resource.title+" "+resource.description+" "+resource.tag+" "+resource.region+" "+resource.contact).toLowerCase().includes(query));
+  const includedCategories = categoryName === "Community" ? ["Community", "Housing", "Transportation", "Childcare"] : [categoryName];
+  const filtered = resources.filter(resource => includedCategories.includes(resource.category) && (resource.title+" "+resource.description+" "+resource.tag+" "+resource.region+" "+resource.contact).toLowerCase().includes(query));
   count.textContent = filtered.length+" resource"+(filtered.length===1?"":"s");
   if (!filtered.length) {
    grid.innerHTML = '<div class="empty-state"><b>No matches just yet.</b><p>Try another search phrase.</p></div>';
