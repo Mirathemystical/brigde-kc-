@@ -130,9 +130,12 @@ if (typeof document !== "undefined" && document.body.dataset.categoryPage) {
  const grid = document.querySelector("#resource-grid");
  const search = document.querySelector("#search");
  const count = document.querySelector("#result-count");
+ let activeCommunityFilter = "All";
  const renderCategoryResources = () => {
   const query = search.value.trim().toLowerCase();
-  const includedCategories = categoryName === "Community" ? ["Community", "Housing", "Transportation", "Childcare"] : [categoryName];
+  const includedCategories = categoryName === "Community"
+   ? (activeCommunityFilter === "All" ? ["Community", "Housing", "Transportation", "Childcare"] : [activeCommunityFilter])
+   : [categoryName];
   const filtered = resources.filter(resource => includedCategories.includes(resource.category) && (resource.title+" "+resource.description+" "+resource.tag+" "+resource.region+" "+resource.contact).toLowerCase().includes(query));
   count.textContent = filtered.length+" resource"+(filtered.length===1?"":"s");
   if (!filtered.length) {
@@ -141,6 +144,17 @@ if (typeof document !== "undefined" && document.body.dataset.categoryPage) {
   }
   grid.innerHTML = filtered.map(resource => '<article class="resource-card"><div class="resource-top"><span class="resource-icon" aria-hidden="true">'+resource.icon+'</span><span class="resource-category">'+resource.category+'</span></div><h3>'+resource.title+'</h3><p>'+resource.description+'</p><p><b>Area:</b> '+resource.region+'</p><p><b>Contact:</b> '+resource.contact+'</p><div class="resource-footer"><span>'+resource.tag+'</span><a href="'+resource.url+'" target="_blank" rel="noopener noreferrer">Official site ↗</a></div></article>').join("");
  };
+ document.querySelectorAll("[data-community-filter]").forEach(button => {
+  button.addEventListener("click", () => {
+   activeCommunityFilter = button.dataset.communityFilter;
+   document.querySelectorAll("[data-community-filter]").forEach(item => {
+    const active = item === button;
+    item.classList.toggle("is-active", active);
+    item.setAttribute("aria-pressed", String(active));
+   });
+   renderCategoryResources();
+  });
+ });
  search.addEventListener("input",renderCategoryResources);
  document.querySelector("#clear-filters").addEventListener("click",()=>{search.value="";renderCategoryResources();search.focus();});
  renderCategoryResources();
