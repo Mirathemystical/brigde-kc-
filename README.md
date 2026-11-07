@@ -1,48 +1,23 @@
 # BRIDGE KC
+Kansas City workforce and community resource navigator. Static HTML/CSS/JavaScript, deployed with GitHub Pages.
 
-**A community resource navigator for career development and digital skills in Kansas City.**
+## Run and check
+`npm start` serves http://localhost:8000. `npm test` runs data, matching and page-integrity checks. `npm run build:data` regenerates resources.js after editing resources.json.
 
-BRIDGE KC is an early-stage prototype designed to help people identify local career, training, and digital-skills resources and turn a broad goal into a practical next step.
+## Files
+- resources.json: canonical resource records, sources, review status and matching metadata
+- resources.js: generated browser data; no network fetch needed for directory loading
+- resource-tools.js: safe card rendering and transparent quiz matching
+- app.js: navigation, search, saved plans and email forms
+- all-resources.html: searchable directory
+- map.html and map.js: address-based map selection with external directions fallback
+- about.html, offer-help.html and category pages: focused visitor journeys
 
-## What's in this project
+## Verification policy
+A retrieved source is not a guarantee of current admission, funding, or eligibility. `reviewed` means the listed program facts were reviewed against provider sources on lastChecked. `source-located` means the page was located but all listing details still need confirmation. `needs-confirmation` identifies inaccessible or insufficient sources. Never assign a review date merely because a URL returns 200. Recheck temporary funding and waiting-list information before advising a visitor. Corrections use a prefilled email the visitor reviews and sends.
 
-- `index.html`, `styles.css`, `app.js` — browser-based prototype
-- `project-charter.md` — purpose, scope, and leadership principles
-- `interview-guide.md` — questions for community discovery
-- `six-week-plan.md` — milestone-based project plan
-- `risk-register.md` — risks and mitigations
-- `presentation-outline.md` — demo and stakeholder presentation
-- `impact-scorecard.csv` — starter measurement template
+## Privacy and delivery
+No accounts or server-side form storage. Plans stay in browser localStorage. Feedback and offers open mail drafts; the visitor must send them. The map loads Google Maps only after the visitor presses Load map; address and directions links remain available without an embedded map. Addresses represent selected provider offices, not every service location.
 
-## Important prototype notes
-
-- Resource listings are demo content until verified with the organizations that provide them.
-- The current prototype uses local browser storage for progress and does not send feedback to a server.
-- Roadmap suggestions are rule-based, not a trained AI model.
-- Do not enter sensitive personal information. This is not an emergency, legal, medical, or benefits-eligibility service.
-
-## Run locally
-
-1. In the project folder, run `npm start`.
-2. Open `http://localhost:8000` in a modern browser.
-3. If you want to keep the page open for development, leave the terminal running.
-
-This project is a static browser app, so it should not be launched with `node app.js` directly.
-
-## Suggested next steps
-
-1. Interview 5–8 potential users and local service providers.
-2. Verify each resource's eligibility rules, cost, location, and contact details.
-3. Test the prototype with users and record where they get stuck.
-4. Track successful connections and completed next steps—not just page views.
-5. Add an AI feature only after defining clear guardrails, trusted sources, and human review.
-
-## Project principles
-
-- Community needs before features
-- Clear, accessible language
-- Privacy and consent by default
-- Verified information and visible uncertainty
-- Measure useful outcomes, not vanity metrics
-
-**Status:** Early prototype. Not affiliated with any government agency or service provider unless explicitly stated.
+## Deployment
+Only .github/workflows/pages.yml deploys. It runs local checks before uploading static files. Browser and provider-source checks complement these tests; passing CI does not certify every external service.
