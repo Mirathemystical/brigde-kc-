@@ -6,6 +6,8 @@
   <meta name="description" content="Find career, training, and digital-skills resources in Kansas City and choose a practical next step.">
   <title>BRIDGE KC — Your next step starts here</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="resources.js" defer></script>
+  <script src="resource-tools.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body class="home-hub">
@@ -19,14 +21,14 @@
         <span class="switcher-label">QUICK NAVIGATION</span>
         <select class="quick-nav-select-menu" aria-label="Quick navigation menu">
           <option value="index.html" selected>Home</option>
-          <option value="career-jobs.html">Career & jobs</option>
+          <option value="all-resources.html">All resources</option><option value="map.html">Resource map</option><option value="career-jobs.html">Career & jobs</option>
           <option value="certificates-training.html">Certificates & training</option>
           <option value="digital-skills.html">Digital skills</option>
           <option value="community-support.html">Community support</option>
           <option value="reentry.html">Reentry</option>
           <option value="immigrant-refugee.html">Immigrant & refugee</option>
           <option value="veterans-disability.html">Veterans & disability</option>
-          <option value="about.html">About</option>
+          <option value="index.html#career-quiz-section">Career quiz</option><option value="index.html#feedback-section">Feedback</option><option value="about.html">About</option>
           <option value="offer-help.html">Offer help</option>
         </select>
       </label>
@@ -51,9 +53,9 @@
     </section>
     <section class="stats-strip" aria-label="Project principles"><div><b>01</b><span>Start with your goal</span></div><div><b>02</b><span>Explore real options</span></div><div><b>03</b><span>Take the next step</span></div><div><b>04</b><span>Keep moving forward</span></div></section>
     <section class="section resources-section" id="resources">
-      <div class="section-heading"><div><p class="eyebrow">THE RESOURCE BOARD</p><h2>Find what moves you forward.</h2><p class="section-intro">Start with career and certificate pathways, then find the support that helps you complete training and return to better-paid work.</p></div><span class="result-count" id="result-count">74 resources</span></div>
+      <div class="section-heading"><div><p class="eyebrow">THE RESOURCE BOARD</p><h2>Find what moves you forward.</h2><p class="section-intro">Start with career and certificate pathways, then find the support that helps you complete training and return to better-paid work.</p></div><span class="result-count" id="result-count">73 resources</span></div>
 
-      <div class="home-category-grid" aria-label="Browse resource categories">
+      <p><a class="text-link" href="all-resources.html">Search all resources ↗</a> · <a class="text-link" href="map.html">View resource map ↗</a></p><div class="home-category-grid" aria-label="Browse resource categories">
         <a class="home-category-card" href="career-jobs.html"><span class="home-category-icon" aria-hidden="true">↗</span><span class="home-category-card-copy"><b>Career & jobs</b><small>Find employment help, resume support, and job-search services.</small></span><span class="home-category-arrow" aria-hidden="true">↗</span></a>
         <a class="home-category-card" href="certificates-training.html"><span class="home-category-icon" aria-hidden="true">◎</span><span class="home-category-card-copy"><b>Certificates & training</b><small>Explore skills training, certifications, apprenticeships, and funding questions.</small></span><span class="home-category-arrow" aria-hidden="true">↗</span></a>
         <a class="home-category-card" href="digital-skills.html"><span class="home-category-icon" aria-hidden="true">⌘</span><span class="home-category-card-copy"><b>Digital skills</b><small>Build technology confidence and find computer or internet access.</small></span><span class="home-category-arrow" aria-hidden="true">↗</span></a>
@@ -84,7 +86,7 @@
         <select id="quiz-barrier" required><option value="">Choose your priority</option><option value="free">Free or funded training</option><option value="paid">Earn while I learn</option><option value="stable">Stable work and benefits</option><option value="growth">Long-term earning growth</option><option value="flex">Flexible schedule or remote options</option></select>
         <label for="quiz-location">Where do you want to train or work?</label>
         <select id="quiz-location" required><option value="">Choose an area</option><option value="mo">Kansas City, Missouri / Missouri side</option><option value="ks">Kansas City, Kansas / Kansas side</option><option value="both">Either side of the metro</option></select>
-        <button class="button dark" type="submit">Find my pathway ↗</button>
+        <label for="quiz-format">How can you attend?</label><select id="quiz-format" required><option value="any">Any format</option><option value="online">Online only</option><option value="inperson">In person</option><option value="hybrid">Hybrid</option></select><button class="button dark" type="submit">Find my pathway ↗</button>
       </form>
       <div id="quiz-results" class="quiz-results" aria-live="polite"><h3>Your pathway matches will appear here</h3><p>Choose your answers and select “Find my pathway.” You can explore more than one route.</p></div>
       <div class="pathway-grid pathway-options">
@@ -104,7 +106,7 @@
       <div class="section-heading"><div><p class="eyebrow">THE WORKFORCE PATHWAY BOARD</p><h2>Training that can lead to a better job.</h2><p class="section-intro">Start with funding and approved programs before paying out of pocket. These are starting points for local certificate programs and training searches—not a claim that every course is free or currently funded.</p></div></div>
       <div class="pathway-grid">
         <article class="pathway-card"><span class="pathway-label">Start here</span><h3>Great Jobs KC</h3><p>Explore career training pathways in healthcare, construction, manufacturing, logistics, and more. Eligible participants may access tuition-free training.</p><a href="https://greatjobskc.org/skills-training/" target="_blank" rel="noopener noreferrer">Explore programs ↗</a></article>
-        <article class="pathway-card"><span class="pathway-label">If you receive SNAP</span><h3>MCC SkillUP Missouri</h3><p>Ask about accelerated workforce programs and tuition support through SkillUP Missouri. Eligibility and supply costs can vary.</p><a href="https://mcckc.edu/workforce-solutions/skillup-missouri.aspx" target="_blank" rel="noopener noreferrer">Check eligibility ↗</a></article>
+        <article class="pathway-card"><span class="pathway-label">If you receive SNAP</span><h3>MCC SkillUP Missouri</h3><p>Ask about tuition support through SkillUP Missouri. The provider reports a waiting list; eligibility and supply costs vary.</p><a href="https://mcckc.edu/workforce-solutions/skillup-missouri.aspx" target="_blank" rel="noopener noreferrer">Check eligibility ↗</a></article>
         <article class="pathway-card"><span class="pathway-label">Kansas City, KS</span><h3>KCKCC + WIOA funding</h3><p>Explore career training that may qualify for WIOA funding. A workforce representative must approve the program and funding.</p><a href="https://www.kckcc.edu/become-a-student/adult-education/wioa-funding-training/index.html" target="_blank" rel="noopener noreferrer">Explore training funding ↗</a></article>
         <article class="pathway-card"><span class="pathway-label">Missouri side</span><h3>MCC certificates</h3><p>Browse certificates across business, health, automotive, construction, manufacturing, and more. Compare costs and expected job outcomes.</p><a href="https://mcckc.edu/programs/certificates/" target="_blank" rel="noopener noreferrer">Browse certificates ↗</a></article>
         <article class="pathway-card"><span class="pathway-label">Approved programs</span><h3>KansasWorks + Missouri ETPL</h3><p>Search official training-provider directories and ask your local workforce center which exact course is currently fundable.</p><a href="https://www.kansasworks.com/search/providers" target="_blank" rel="noopener noreferrer">KansasWorks ↗</a> · <a href="https://jobs.mo.gov/community/missouri-eligible-training-provider-list" target="_blank" rel="noopener noreferrer">Missouri ETPL ↗</a></article>
@@ -130,8 +132,8 @@
       </div>
       <div class="plan-card"><div class="plan-card-head"><span class="plan-icon">✳</span><span><small>YOUR STARTING POINT</small><b id="plan-title">A simple job-search plan</b></span><span class="plan-tag">3 steps</span></div><ol id="plan-steps"><li><span>1</span><div><b>Get clear on your target</b><p>Write down the kind of role, schedule, or workplace you want.</p></div></li><li><span>2</span><div><b>Prepare one useful document</b><p>Gather your experience and update a resume or work history.</p></div></li><li><span>3</span><div><b>Reach out to one resource</b><p>Choose a relevant career-support organization and ask about its services.</p></div></li></ol><button class="save-plan" id="save-plan" type="button">□ Save steps on this device</button><p class="saved-message" id="saved-message" role="status"></p></div>
     </section>
-    <section class="feedback-section"><div><p class="eyebrow">HELP US BUILD BETTER</p><h2>What would help you most?</h2><p>Choose the improvement that would make a resource navigator more useful.</p></div><form id="feedback-form"><label for="feedback">The most useful improvement would be…</label><select id="feedback" required><option value="">Choose one</option><option>More verified local resources</option><option>Clearer eligibility and cost details</option><option>Help writing a resume or application</option><option>More language and accessibility options</option><option>Guidance on what to do next</option></select><button class="button dark" type="submit">Prepare feedback email <span>→</span></button><p class="saved-message" id="feedback-message" role="status">Opens an email draft for you to review and send. You can also email bridgekc186@gmail.com.</p></form></section>
+    <section class="feedback-section" id="feedback-section"><div><p class="eyebrow">HELP US BUILD BETTER</p><h2>What would help you most?</h2><p>Choose the improvement that would make a resource navigator more useful.</p></div><form id="feedback-form"><label for="feedback">The most useful improvement would be…</label><select id="feedback" required><option value="">Choose one</option><option>More verified local resources</option><option>Clearer eligibility and cost details</option><option>Help writing a resume or application</option><option>More language and accessibility options</option><option>Guidance on what to do next</option></select><button class="button dark" type="submit">Prepare feedback email <span>→</span></button><p class="saved-message" id="feedback-message" role="status">Opens an email draft for you to review and send. You can also email bridgekc186@gmail.com.</p></form></section>
   </main>
-  <footer><a class="brand" href="#"><span class="brand-mark">B</span><span>BRIDGE <b>KC</b></span></a><p>Community-powered. Step by step.</p><a href="mailto:bridgekc186@gmail.com">bridgekc186@gmail.com</a><span>Prototype · Resource details require verification</span></footer>
+  <footer><a class="brand" href="#"><span class="brand-mark">B</span><span>BRIDGE <b>KC</b></span></a><p>Community-powered. Step by step.</p><a href="mailto:bridgekc186@gmail.com">bridgekc186@gmail.com</a><span>Provider details and availability can change</span></footer>
 </body>
 </html>

@@ -232,3 +232,8 @@ body.home-hub .resources-section .search-row{display:flex!important}
 body.home-hub .resources-section .filter-list{display:flex!important}
 body.home-hub .resources-section #resource-grid{display:grid!important}
 body.home-hub .resources-section .verification-note{display:flex!important}
+
+
+/* Compact home; full search lives on all-resources.html. */
+body.home-hub .resources-section .search-row,body.home-hub .resources-section .filter-list,body.home-hub .resources-section #resource-grid{display:none!important}
+.match-card{padding:18px;margin:14px 0;background:white;border:1px solid var(--line);border-radius:12px}.match-card a,details a,#map-directions,#map-source{text-decoration:underline}details{font-size:12px;margin-bottom:15px}summary{cursor:pointer;font-weight:700;padding:8px 0}details p{margin-top:10px}#map-place{display:block;width:100%;max-width:700px;padding:14px;margin:12px 0}#map-frame iframe{width:100%;height:420px;border:0;margin-top:18px;border-radius:14px}.site-header{flex-wrap:wrap}.site-header .page-switcher{min-width:0} .site-header .quick-nav-select{min-width:0} .site-header .quick-nav-select-menu{min-width:0}
