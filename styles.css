@@ -221,3 +221,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .community-filter{border:1px solid #cbd8cf;background:#fff;color:var(--ink);border-radius:999px;padding:9px 15px;min-height:40px;font:600 12px 'DM Sans',sans-serif;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
 .community-filter:hover,.community-filter.is-active{background:var(--green);color:#fff;border-color:var(--green)}
 .community-filter:focus-visible{outline:3px solid #b87936;outline-offset:3px}
+
+/* Keep the page selector in the header on every screen. */
+.site-header .page-switcher{display:block;position:static;flex:1;min-width:180px;background:transparent;border:0;box-shadow:none;margin:0;padding:0;width:auto;order:0}
+.site-header .page-switcher-inner{padding:8px;min-height:0;overflow:visible}
+.site-header .quick-nav-select-menu{width:100%}
+.site-header .switcher-label{display:none}
+@media(max-width:760px){.site-header .page-switcher{order:3;flex-basis:100%;margin-bottom:8px}.site-header .page-switcher-inner{padding:0}}
+body.home-hub .resources-section .search-row{display:flex!important}
+body.home-hub .resources-section .filter-list{display:flex!important}
+body.home-hub .resources-section #resource-grid{display:grid!important}
+body.home-hub .resources-section .verification-note{display:flex!important}

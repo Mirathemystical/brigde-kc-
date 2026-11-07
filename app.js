@@ -202,11 +202,12 @@ document.querySelector("#save-plan").addEventListener("click",()=>{
 });
 document.querySelector("#feedback-form").addEventListener("submit",e=>{
  e.preventDefault();
- document.querySelector("#feedback-message").textContent="Thanks—your choice is shown only in this demo. It has not been sent or stored.";
+ window.location.href="mailto:bridgekc186@gmail.com?subject="+encodeURIComponent("BRIDGE KC feedback")+"&body="+encodeURIComponent(document.querySelector("#feedback").value);
+  document.querySelector("#feedback-message").textContent="Review and send the draft in your email app. If it does not open, email bridgekc186@gmail.com directly.";
  document.querySelector("#feedback").value="";
 });
 renderResources();
-try{if(localStorage.getItem("bridge-kc-saved-plan")){document.querySelector("#saved-message").textContent="A plan is saved in this browser.";document.querySelector("#save-plan").textContent="✓ Saved on this device";}}catch(e){}
+try{const savedGoal=localStorage.getItem("bridge-kc-saved-plan");if(savedGoal && plans[savedGoal]){document.querySelector("#goal").value=savedGoal;renderPlan();document.querySelector("#saved-message").textContent="A plan is saved in this browser.";document.querySelector("#save-plan").textContent="✓ Saved on this device";}}catch(e){}
 
 }
 
