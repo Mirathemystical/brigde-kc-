@@ -19,4 +19,4 @@ Every retained record has a provider URL, review outcome and next-confirmation g
 - needs-confirmation: source inaccessible or insufficient for verification. These listings remain clearly labeled so useful leads are not silently erased.
 
 ## Ongoing maintenance
-Recheck waiting lists, fees, funding and program cohorts before relying on them. Update a record's lastChecked only after reviewing the evidence. Keep provider sources and a precise note about what was checked. Visitors can suggest a correction through each resource card.
+Recheck waiting lists, fees, funding and program cohorts before relying on them. Update a record's lastChecked only after reviewing the evidence. Keep provider sources and a precise note about what was checked.

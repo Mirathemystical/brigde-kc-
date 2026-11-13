@@ -120,45 +120,10 @@ document.querySelector("#save-plan").addEventListener("click",()=>{
   else{localStorage.setItem(key,goal);document.querySelector("#saved-message").textContent="Plan saved in this browser on this device.";document.querySelector("#save-plan").textContent="✓ Saved on this device";}
  }catch(e){document.querySelector("#saved-message").textContent="Local storage is unavailable in this browser session.";}
 });
-document.querySelector("#feedback-form").addEventListener("submit",e=>{
- e.preventDefault();
- window.location.href="mailto:bridgekc186@gmail.com?subject="+encodeURIComponent("BRIDGE KC feedback")+"&body="+encodeURIComponent(document.querySelector("#feedback").value);
-  document.querySelector("#feedback-message").textContent="Review and send the draft in your email app. If it does not open, email bridgekc186@gmail.com directly.";
- document.querySelector("#feedback").value="";
-});
 renderResources();
 try{const savedGoal=localStorage.getItem("bridge-kc-saved-plan");if(savedGoal && plans[savedGoal]){document.querySelector("#goal").value=savedGoal;renderPlan();document.querySelector("#saved-message").textContent="A plan is saved in this browser.";document.querySelector("#save-plan").textContent="✓ Saved on this device";}}catch(e){}
 
 }
-
-const supportForm = document.querySelector("#support-form");
-if (supportForm) {
- supportForm.addEventListener("submit", event => {
-  event.preventDefault();
-  const offer = document.querySelector("#support-type").value;
-  const name = document.querySelector("#support-name").value.trim() || "Not provided";
-  const contact = document.querySelector("#support-contact").value.trim() || "Not provided";
-  const message = document.querySelector("#support-message").value.trim();
-  const subject = "[BRIDGE KC community offer] " + offer;
-  const body = [
-   "Community support offer",
-   "",
-   "Offer type: " + offer,
-   "Name / organization: " + name,
-   "Contributor contact: " + contact,
-   "",
-   "Details:",
-   message,
-   "",
-   "Submitted through the BRIDGE KC website. Please verify details before adding information to the public directory."
-  ].join("\n");
-  const mailto = "mailto:bridgekc186@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-  document.querySelector("#support-message-status").textContent =
-   "Your email draft is ready. Review it in your email app and press Send. Nothing is sent automatically; please do not include confidential information.";
-  window.location.href = mailto;
- });
-}
-
 
 const careerQuiz = document.querySelector("#career-quiz");
 if(careerQuiz) careerQuiz.addEventListener("submit",event=>{
